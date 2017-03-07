@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-bugly-upgrade" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>BuglyUpgrade</name>
+    <APP_KEY>1</APP_KEY>
+    <js-module name="BuglyUpgrade" src="www/BuglyUpgrade.js">
+        <clobbers target="cordova.plugins.BuglyUpgrade" />
+    </js-module>
+</plugin>
