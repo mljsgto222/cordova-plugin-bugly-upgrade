@@ -1,8 +1,40 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-bugly-upgrade" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-bugly-upgrade" version="0.0.1" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <name>BuglyUpgrade</name>
-    <APP_KEY>1</APP_KEY>
     <js-module name="BuglyUpgrade" src="www/BuglyUpgrade.js">
-        <clobbers target="cordova.plugins.BuglyUpgrade" />
+        <clobbers target="BuglyUpgrade" />
     </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="BuglyUpgrade">
+                <param name="android-package" value="com.mljsgto222.cordova.bugly.BuglyUpgrade" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_LOGS" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:name="com.tencent.bugly.beta.ui.BetaActivity" android:theme="@android:style/Theme.Translucent" />
+            <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="$PACKAGE_NAME.fileProvider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths"/>
+            </provider>
+        </config-file>
+        <source-file src="src/android/BuglyUpgrade.java" target-dir="src/com/mljsgto222/cordova/bugly" />
+        <source-file src="src/android/res/xml/provider_paths.xml" target-dir="res/xml" />
+        <framework src="com.tencent.bugly:crashreport_upgrade:latest.release" />
+        <framework src="com.tencent.bugly:nativecrashreport:latest.release" />
+    </platform>
 </plugin>
