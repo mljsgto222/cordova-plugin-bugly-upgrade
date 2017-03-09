@@ -1,5 +1,5 @@
 var exec = require('cordova/exec');
 
-exports.init = function(isDebug, success, error) {
-    exec(success, error, "BuglyUpgrade", "init", [isDebug]);
+exports.checkUpgrade = function(success, error) {
+    exec(success, error, "BuglyUpgrade", "checkUpgrade");
 };
