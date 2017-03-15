@@ -13,6 +13,20 @@ _app运行时会自动检查更新_
 手动检查更新：
 
 ```
-BuglyUpgrade.checkUpgrade(, callback);
+var done = function() {
+    // do something
+}
+BuglyUpgrade.checkUpgrade(done);
+```
+
+获取更新信息：
+
+```
+var done = function(info) {
+    if(info) {
+        // do something
+    }
+}
+BuglyUpgrade.getUpgradeInfo(done)
 ```
 
