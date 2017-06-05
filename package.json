@@ -1,0 +1,33 @@
+{
+    "name": "cordova-plugin-bugly-upgrade",
+    "description": "",
+    "version": "0.0.1",
+    "homepage": "https://github.com/mljsgto222/cordova-plugin-bugly-upgrade#readme",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mljsgto222/cordova-plugin-bugly-upgrade.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mljsgto222/cordova-plugin-bugly-upgrade/issues"
+    },
+    "cordova": {
+        "id": "cordova-plugin-bugly-upgradet",
+        "platforms": [
+            "android"
+        ]
+    },
+    "keywords": [
+        "ecosystem:cordova",
+        "ecosystem:phonegap",
+        "cordova-android",
+        "bugly"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=5.0.0"
+        }
+    ],
+    "author": "mljsgto222",
+    "license": "MIT"
+}
